@@ -51,6 +51,7 @@
     </a>
     <nav class="main-nav" aria-label="Navigation">
       <a href="#activites" data-i18n="nav_activities">Activités</a>
+      <a href="#catalogue" data-i18n="nav_catalogue">Catalogue</a>
       <a href="#transferts" data-i18n="nav_transfers">Transferts</a>
       <a href="#apropos" data-i18n="nav_about">À propos</a>
       <a href="#avis" data-i18n="nav_reviews">Avis</a>
@@ -74,6 +75,7 @@
   </div>
   <nav class="mobile-nav" id="mobileNav" hidden aria-label="Navigation mobile">
     <a href="#activites" data-i18n="nav_activities">Activités</a>
+    <a href="#catalogue" data-i18n="nav_catalogue">Catalogue</a>
     <a href="#transferts" data-i18n="nav_transfers">Transferts</a>
     <a href="#apropos" data-i18n="nav_about">À propos</a>
     <a href="#avis" data-i18n="nav_reviews">Avis</a>
@@ -108,7 +110,7 @@
   <!-- ============ CHIFFRES ============ -->
   <section class="proof-band" aria-label="En bref">
     <ul class="wrap">
-      <li><span data-icon="compass"></span><span><b id="statOffers">64</b><span data-i18n="stat_offers">activités & excursions</span></span></li>
+      <li><span data-icon="compass"></span><span><b id="statOffers">66</b><span data-i18n="stat_offers">activités & excursions</span></span></li>
       <li><span data-icon="language"></span><span><b id="statLangs">6</b><span data-i18n="stat_langs">langues parlées</span></span></li>
       <li><span data-icon="clock"></span><span><b>24/7</b><span data-i18n="stat_247">disponibles jour et nuit</span></span></li>
       <li><span data-icon="bus"></span><span><b data-i18n="stat_pickup">Prise en charge à l’hôtel</b><span data-i18n="stat_pickup_d">sur la plupart des offres</span></span></li>
@@ -148,6 +150,19 @@
     <div class="wrap">
       <p class="result-count" id="resultCount" aria-live="polite"></p>
       <div id="catalog"></div>
+    </div>
+  </section>
+
+  <!-- ============ CATALOGUE ============ -->
+  <section class="section brochures" id="catalogue" aria-labelledby="catlTitle">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow"><span data-icon="clipboard-list"></span><span data-i18n="nav_catalogue">Catalogue</span></p>
+        <h2 class="section-title" id="catlTitle" data-i18n="catl_title">Nos catalogues</h2>
+        <p class="brochure-sub" data-i18n="catl_sub"></p>
+      </div>
+      <div class="brochure-grid" id="brochures"></div>
+      <p class="brochure-note"><span data-icon="info-circle"></span><span data-i18n="catl_note"></span></p>
     </div>
   </section>
 
@@ -266,6 +281,7 @@
       </div>
       <nav class="footer-links" aria-label="Pied de page">
         <a href="#activites" data-i18n="nav_activities">Activités</a>
+        <a href="#catalogue" data-i18n="nav_catalogue">Catalogue</a>
         <a href="#transferts" data-i18n="nav_transfers">Transferts</a>
         <a href="#apropos" data-i18n="nav_about">À propos</a>
         <a href="#contact" data-i18n="nav_contact">Contact</a>
@@ -287,6 +303,7 @@
 <dialog class="sheet" id="offerDialog" aria-labelledby="offerTitle"></dialog>
 <!-- Devis -->
 <dialog class="sheet cart-sheet" id="cartDialog" aria-labelledby="cartTitle"></dialog>
+<dialog class="sheet brochure-sheet" id="brochureDialog" aria-labelledby="brochureTitle"></dialog>
 
 <script src="js/icons.js"></script>
 <script src="js/i18n.js"></script>
