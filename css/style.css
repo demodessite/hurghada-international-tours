@@ -562,7 +562,7 @@ dialog::backdrop { background: rgb(8 20 38 / .55); -webkit-backdrop-filter: blur
     border: 0; border-radius: 999px; background: var(--surface-2); color: var(--ink); font-weight: 700; flex: none;
   }
   .sheet-bar-title { font-weight: 700; font-size: .95rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
-  #offerDialog > .sheet-close { display: none; }
+  #offerDialog > .sheet-close, #brochureDialog > .sheet-close { display: none; }
 }
 .offer-layout { display: grid; }
 @media (min-width: 900px) {
@@ -763,3 +763,23 @@ svg.art { display: block; }
   [dir="rtl"] .cart-sheet { margin: 0 auto 0 0; border-radius: 0 22px 22px 0; }
 }
 [dir="rtl"] .price .from { text-transform: none; }
+
+/* ---------- Catalogues ---------- */
+.brochure-sub { color: var(--ink-2, #3d4b5f); }
+.brochure-grid { display: grid; gap: 16px; grid-template-columns: 1fr; }
+@media (min-width: 640px) { .brochure-grid { grid-template-columns: repeat(3, 1fr); } }
+.brochure { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; display: flex; flex-direction: column; box-shadow: var(--shadow); }
+.brochure-thumb { display: block; padding: 0; border: 0; background: var(--surface-2); aspect-ratio: 4 / 3; overflow: hidden; cursor: zoom-in; }
+.brochure-thumb img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; transition: transform .5s cubic-bezier(.2,.7,.2,1); }
+.brochure-thumb:hover img { transform: scale(1.04); }
+.brochure-body { padding: 14px 16px 16px; display: grid; gap: 6px; }
+.brochure-body h3 { margin: 0; font-size: 1.1rem; }
+.brochure-body p { margin: 0; color: var(--ink-3); font-size: .85rem; }
+.brochure-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+.brochure-actions .btn { flex: 1 1 auto; min-width: 0; }
+.brochure-note { display: flex; gap: 8px; align-items: flex-start; margin: 16px 0 0; color: var(--ink-3); font-size: .9rem; }
+.brochure-note .i { flex: none; width: 18px; height: 18px; margin-top: 2px; }
+.brochure-sheet .sheet-scroll { background: var(--surface-2); }
+.brochure-full { display: block; width: 100%; max-width: 900px; height: auto; margin: 0 auto; }
+.brochure-sheet .sheet-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; }
+.brochure-sheet .sheet-foot .brochure-note { margin: 0; flex: 1 1 220px; }
