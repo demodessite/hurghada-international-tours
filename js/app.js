@@ -19,6 +19,8 @@
   /* ---------- Icône dauphin (dessin maison, style Tabler) ---------- */
   ICONS.dolphin = '<path d="M2.5 15.5c2.2-4.6 6.7-7.6 11.8-7.4 3.2.1 5.7 1.6 6.9 3.9l1.6.4-1.5 1c-.9 2-3.4 3.1-6.1 2.7-2.6-.4-4.8.3-6.8 2l-.2-2.4-2.4 1.8z"/><path d="M11 8.4l.9-3.2 2.4 3"/><path d="M12.5 15.2l-.6 2.6 2.3-2.2"/>';
 
+  ICONS.download = '<path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2"/><path d="M7 11l5 5l5 -5"/><path d="M12 4l0 12"/>';
+
   const FLAGS = {
     fr: '<svg class="flag" viewBox="0 0 3 2" preserveAspectRatio="none" aria-hidden="true"><rect width="1" height="2" fill="#0055A4"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#EF4135"/></svg>',
     en: '<svg class="flag" viewBox="0 0 60 40" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="60" height="40" fill="#012169"/><path d="M0 0L60 40M60 0L0 40" stroke="#fff" stroke-width="8"/><path d="M0 0L60 40M60 0L0 40" stroke="#C8102E" stroke-width="3"/><path d="M30 0v40M0 20h60" stroke="#fff" stroke-width="12"/><path d="M30 0v40M0 20h60" stroke="#C8102E" stroke-width="7"/></svg>',
@@ -487,6 +489,36 @@
     </button>`).join('');
   }
 
+  /* ---------- Catalogues (brochures PDF/JPG de l'agence) ---------- */
+  const BROCHURES = [
+    { cat: 'aqua', img: 'img/catalogue-aquatique.jpg', file: 'catalogue-activites-aquatiques.jpg' },
+    { cat: 'excursions', img: 'img/catalogue-excursions.jpg', file: 'catalogue-excursions.jpg' },
+    { cat: 'explore', img: 'img/catalogue-exploration.jpg', file: 'catalogue-exploration-bien-etre.jpg' }
+  ];
+  function renderBrochures() {
+    $('#brochures').innerHTML = BROCHURES.map((b, i) => {
+      const name = L(catOf(b.cat).l);
+      return `<article class="brochure">
+        <button class="brochure-thumb" type="button" data-brochure="${i}" aria-label="${esc(t('catl_view'))} – ${esc(name)}"><img src="${b.img}" alt="" loading="lazy" decoding="async"></button>
+        <div class="brochure-body"><h3>${esc(name)}</h3><p>${esc(t('catl_lang'))}</p>
+          <div class="brochure-actions"><button class="btn btn-ink btn-sm" type="button" data-brochure="${i}">${icon('search')}${esc(t('catl_view'))}</button>
+          <a class="btn btn-ghost btn-sm" href="${b.img}" download="${b.file}">${icon('download')}${esc(t('catl_dl'))}</a></div></div>
+      </article>`;
+    }).join('');
+  }
+  const brochureDlg = document.getElementById('brochureDialog');
+  function openBrochure(i) {
+    const b = BROCHURES[i]; const name = L(catOf(b.cat).l);
+    brochureDlg.innerHTML = `<div class="sheet-bar"><button class="back-btn" type="button" data-close>${icon('arrow-left')}${esc(t('back'))}</button><span class="sheet-bar-title" id="brochureTitle">${esc(name)}</span></div>
+      <button class="sheet-close" type="button" data-close aria-label="${esc(t('close'))}">${icon('x')}</button>
+      <div class="sheet-scroll"><img class="brochure-full" src="${b.img}" alt="${esc(name)}"></div>
+      <div class="sheet-foot"><p class="brochure-note">${icon('info-circle')}<span>${esc(t('catl_note'))}</span></p><a class="btn btn-sun" href="${b.img}" download="${b.file}">${icon('download')}${esc(t('catl_dl'))}</a></div>`;
+    if (!brochureDlg.open) { brochureDlg.showModal(); pushHist(brochureDlg, 'brochure', '#catalogue'); }
+  }
+  document.addEventListener('click', (e) => { const b = e.target.closest('#brochures [data-brochure]'); if (b) openBrochure(Number(b.dataset.brochure)); });
+  brochureDlg.addEventListener('click', (e) => { if (e.target === brochureDlg || e.target.closest('[data-close]')) brochureDlg.close(); });
+  brochureDlg.addEventListener('close', () => popHist(brochureDlg));
+
   /* ---------- Catalogue ---------- */
   const state = { cat: 'all', sub: null, q: '' };
   const norm = (s) => String(s).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
@@ -591,7 +623,7 @@
   }
   window.addEventListener('popstate', () => {
     if (ignorePop) { ignorePop = false; return; }
-    [document.getElementById('offerDialog'), document.getElementById('cartDialog')].forEach((d) => { if (d.open) { d._hist = false; d.close(); } });
+    [document.getElementById('offerDialog'), document.getElementById('cartDialog'), document.getElementById('brochureDialog')].forEach((d) => { if (d.open) { d._hist = false; d.close(); } });
   });
 
   /* ---------- Fiche offre + configurateur ---------- */
@@ -1121,7 +1153,7 @@
   }
 
   function renderAll() {
-    applyStatic(); renderDests(); renderTabs(); renderCatalog(); renderTransfers(); renderReviews(); renderFaq(); renderSocials();
+    applyStatic(); renderDests(); renderBrochures(); renderTabs(); renderCatalog(); renderTransfers(); renderReviews(); renderFaq(); renderSocials();
     updateCartUI();
     if (offerDlg.open) renderOffer();
     if (cartDlg.open) renderCart();

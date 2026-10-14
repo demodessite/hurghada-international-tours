@@ -148,7 +148,7 @@ const OFFERS = [
     ]
   },
   {
-    id: 'paradise', cat: 'aqua', sub: 'islands', icon: 'sun-high', photo: 'img/ile-paradise.jpg',
+    id: 'paradise', cat: 'aqua', sub: 'islands', icon: 'sun-high', photo: 'img/paradise-coeur.jpg', photoPos: 'center 10%',
     title: ['Paradise Island', 'Paradise Island', 'Paradise Island', 'Paradise Island'],
     place: 'hurghada', hours: '09:00–15:30', tags: ['family'],
     desc: [
@@ -162,7 +162,7 @@ const OFFERS = [
     pricing: { type: 'pp', tiers: [{ k: 'adult', a: '13+', p: 55 }, { k: 'child', a: '4-12', p: 27.5 }, { k: 'baby', a: '0-3', p: 0 }] }
   },
   {
-    id: 'mahmya', cat: 'aqua', sub: 'islands', icon: 'anchor', photo: 'img/ile-mahmya.jpg',
+    id: 'mahmya', cat: 'aqua', sub: 'islands', icon: 'anchor', photo: 'img/mahmya-vue.jpg',
     title: ['Mahmya Island', 'Mahmya Island', 'Mahmya Island', 'Mahmya Island'],
     place: 'hurghada', tags: ['family'],
     desc: [
@@ -196,21 +196,7 @@ const OFFERS = [
     ]
   },
   {
-    id: 'nemo', cat: 'aqua', sub: 'islands', icon: 'fish', photo: 'img/ile-nemo.jpg',
-    title: ['L’île Nemo', 'Nemo Island', 'Isla Nemo', 'Ilha Nemo'],
-    place: 'hurghada', hours: '09:00–16:00', tags: ['family'],
-    desc: [
-      'Une croisière vers l’île Nemo, un lieu paisible et préservé, avec des arrêts snorkeling en chemin.',
-      'A cruise to Nemo Island, a peaceful, unspoilt spot, with snorkeling stops along the way.',
-      'Un crucero hasta la isla Nemo, un lugar tranquilo y preservado, con paradas de snorkel por el camino.',
-      'Um cruzeiro até à ilha Nemo, um lugar tranquilo e preservado, com paragens de snorkeling pelo caminho.'
-    ],
-    notes: [['1 h 45 sur l’île', '1 h 45 on the island', '1 h 45 en la isla', '1 h 45 na ilha']],
-    incl: ['hotelTransfer', 'seaCruise', 'snorkelStops', 'lunch'], excl: ['personal', 'photographer'],
-    pricing: { type: 'pp', tiers: [{ k: 'adult', a: '10+', p: 25 }, { k: 'child', a: '3-10', p: 15 }, { k: 'baby', a: '0-2', p: 0 }] }
-  },
-  {
-    id: 'magawish', cat: 'aqua', sub: 'islands', icon: 'speedboat', photo: 'img/ile-magawish.jpg',
+    id: 'magawish', cat: 'aqua', sub: 'islands', icon: 'speedboat', photo: 'img/magawish-panneau.jpg',
     title: ['L’île Magawish', 'Magawish Island', 'Isla Magawish', 'Ilha Magawish'],
     place: 'hurghada', hours: '09:00–16:00', tags: ['family'],
     desc: [
@@ -239,6 +225,7 @@ const OFFERS = [
   },
   {
     id: 'orangebay', cat: 'aqua', sub: 'islands', icon: 'sunrise', photo: 'img/ile-orangebay.jpg',
+    photos: ['img/ile-orangebay.jpg', 'img/orangebay-giftun.jpg', 'img/orangebay-vue.jpg', 'img/orangebay-coeurs.jpg', 'img/orangebay-escalier.jpg'],
     title: ['L’île Orange Bay', 'Orange Bay Island', 'Isla Orange Bay', 'Ilha Orange Bay'],
     place: 'hurghada', hours: '09:00–16:00', tags: ['family'],
     desc: [
@@ -249,7 +236,7 @@ const OFFERS = [
     ],
     notes: [['1 h 45 sur l’île', '1 h 45 on the island', '1 h 45 en la isla', '1 h 45 na ilha']],
     incl: ['hotelTransfer', 'islandEntry', 'yacht', 'snorkelGear', 'lunchBoat', 'openDrinksBoat'], excl: ['personal', 'photographer'],
-    pricing: { type: 'pp', tiers: [{ k: 'adult', a: '10+', p: 30 }, { k: 'child', a: '3-10', p: 15 }, { k: 'baby', a: '0-2', p: 0 }] }
+    pricing: { type: 'pp', tiers: [{ k: 'adult', a: '10+', p: 25 }, { k: 'child', a: '3-10', p: 12.5 }, { k: 'baby', a: '0-2', p: 0 }] }
   },
   {
     id: 'amwaj', cat: 'aqua', sub: 'islands', icon: 'beach', photo: 'img/amwaj-plage.jpg',
@@ -288,6 +275,46 @@ const OFFERS = [
       'Schedule: 1 h on Orange Bay, 1 h on Hula Hula, one snorkeling stop of 45 min to 1 h, and a meal around 12:30.',
       'Programa: 1 h en Orange Bay, 1 h en Hula Hula, una parada de snorkel de 45 min a 1 h y comida hacia las 12:30.',
       'Programa: 1 h em Orange Bay, 1 h em Hula Hula, uma paragem de snorkeling de 45 min a 1 h e refeição por volta das 12h30.'
+    ]],
+    incl: ['hotelTransfer', 'boat', 'snorkelGear', 'mealWithDrinks'], excl: ['personal', 'photographer'],
+    pricing: { type: 'pp', tiers: [{ k: 'adult', a: '12+', p: 50 }, { k: 'child', a: '5-12', p: 25 }, { k: 'baby', a: 'u5', p: 0 }] }
+  },
+  {
+    id: 'combo-orange-magawish', cat: 'aqua', sub: 'islands', icon: 'beach', photo: 'img/orangebay-giftun.jpg',
+    photos: ['img/orangebay-giftun.jpg', 'img/magawish-panneau.jpg', 'img/orangebay-vue.jpg', 'img/orangebay-coeurs.jpg', 'img/orangebay-escalier.jpg'],
+    title: ['Orange Bay + Magawish (2 îles)', 'Orange Bay + Magawish (2 islands)', 'Orange Bay + Magawish (2 islas)', 'Orange Bay + Magawish (2 ilhas)'],
+    place: 'hurghada', hours: '08:00–16:30', tags: ['family'],
+    desc: [
+      'Deux îles en une seule journée : Orange Bay et ses pontons en bois sur une eau turquoise, puis Magawish et sa plage de sable fin. Snorkeling en pleine mer et repas inclus.',
+      'Two islands in one day: Orange Bay with its wooden jetties over turquoise water, then Magawish and its fine-sand beach. Open-sea snorkeling and a meal included.',
+      'Dos islas en un solo día: Orange Bay y sus pasarelas de madera sobre agua turquesa, y después Magawish y su playa de arena fina. Snorkel en mar abierto y comida incluidos.',
+      'Duas ilhas num só dia: Orange Bay e os seus passadiços de madeira sobre água turquesa e depois Magawish e a sua praia de areia fina. Snorkeling em mar aberto e refeição incluídos.'
+    ],
+    notes: [[
+      'Programme : 1 h sur Orange Bay, 1 h sur Magawish, 1 h de snorkeling avec le matériel et repas vers 12 h 30.',
+      'Schedule: 1 h on Orange Bay, 1 h on Magawish, 1 h of snorkeling with gear and a meal around 12:30.',
+      'Programa: 1 h en Orange Bay, 1 h en Magawish, 1 h de snorkel con el equipo y comida hacia las 12:30.',
+      'Programa: 1 h em Orange Bay, 1 h em Magawish, 1 h de snorkeling com o equipamento e refeição por volta das 12h30.'
+    ]],
+    incl: ['hotelTransfer', 'boat', 'snorkelGear', 'mealWithDrinks'], excl: ['personal', 'photographer'],
+    pricing: { type: 'pp', tiers: [{ k: 'adult', a: '12+', p: 50 }, { k: 'child', a: '5-12', p: 25 }, { k: 'baby', a: 'u5', p: 0 }] }
+  },
+  {
+    id: 'combo-orange-amwaj', cat: 'aqua', sub: 'islands', icon: 'beach', photo: 'img/amwaj-plage.jpg',
+    photos: ['img/amwaj-plage.jpg', 'img/orangebay-giftun.jpg', 'img/amwaj-tour.jpg', 'img/orangebay-vue.jpg', 'img/orangebay-coeurs.jpg'],
+    title: ['Orange Bay + Amwaj (2 îles)', 'Orange Bay + Amwaj (2 islands)', 'Orange Bay + Amwaj (2 islas)', 'Orange Bay + Amwaj (2 ilhas)'],
+    place: 'hurghada', hours: '08:00–16:30', tags: ['family'],
+    desc: [
+      'Deux îles en une seule journée : Orange Bay et ses pontons en bois sur une eau turquoise, puis Amwaj, sa longue plage de sable blanc et ses parasols en paille. Snorkeling en pleine mer et repas inclus.',
+      'Two islands in one day: Orange Bay with its wooden jetties over turquoise water, then Amwaj with its long white-sand beach and straw parasols. Open-sea snorkeling and a meal included.',
+      'Dos islas en un solo día: Orange Bay y sus pasarelas de madera sobre agua turquesa, y después Amwaj, con su larga playa de arena blanca y sus sombrillas de paja. Snorkel en mar abierto y comida incluidos.',
+      'Duas ilhas num só dia: Orange Bay e os seus passadiços de madeira sobre água turquesa e depois Amwaj, com a sua longa praia de areia branca e chapéus de palha. Snorkeling em mar aberto e refeição incluídos.'
+    ],
+    notes: [[
+      'Programme : 1 h sur Orange Bay, 1 h sur Amwaj, 1 h de snorkeling avec le matériel et repas vers 12 h 30.',
+      'Schedule: 1 h on Orange Bay, 1 h on Amwaj, 1 h of snorkeling with gear and a meal around 12:30.',
+      'Programa: 1 h en Orange Bay, 1 h en Amwaj, 1 h de snorkel con el equipo y comida hacia las 12:30.',
+      'Programa: 1 h em Orange Bay, 1 h em Amwaj, 1 h de snorkeling com o equipamento e refeição por volta das 12h30.'
     ]],
     incl: ['hotelTransfer', 'boat', 'snorkelGear', 'mealWithDrinks'], excl: ['personal', 'photographer'],
     pricing: { type: 'pp', tiers: [{ k: 'adult', a: '12+', p: 50 }, { k: 'child', a: '5-12', p: 25 }, { k: 'baby', a: 'u5', p: 0 }] }
@@ -385,10 +412,10 @@ const OFFERS = [
       'Programa: 1h45 em Orange Bay, 1 h em White Island, 2 sessões de snorkeling de 30 min e refeição a bordo por volta das 12h30.'
     ]],
     incl: ['hotelTransfer', 'boat', 'snorkelGear', 'lunchBoat', 'drinksBoat'], excl: ['personal', 'photographer'],
-    pricing: { type: 'pp', tiers: [{ k: 'adult', a: '10+', p: 35 }, { k: 'child', a: '3-10', p: 17.5 }, { k: 'baby', a: 'u3', p: 0 }] }
+    pricing: { type: 'pp', tiers: [{ k: 'adult', a: '10+', p: 30 }, { k: 'child', a: '3-10', p: 15 }, { k: 'baby', a: 'u3', p: 0 }] }
   },
   {
-    id: 'bianca', cat: 'aqua', sub: 'islands', icon: 'ripple', photo: 'img/ile-bianca.jpg',
+    id: 'bianca', cat: 'aqua', sub: 'islands', icon: 'ripple', photo: 'img/bianca-vue.jpg',
     title: ['L’île Bianca', 'Bianca Island', 'Isla Bianca', 'Ilha Bianca'],
     place: 'hurghada', hours: '09:00–16:00', tags: ['family'],
     desc: [
@@ -401,7 +428,7 @@ const OFFERS = [
     pricing: { type: 'pp', tiers: [{ k: 'adult', a: '11+', p: 65 }, { k: 'child', a: '3-11', p: 35 }, { k: 'baby', a: '0-2', p: 0 }] }
   },
   {
-    id: 'ozeria', cat: 'aqua', sub: 'islands', icon: 'kayak', photo: 'img/ile-ozeria.jpg',
+    id: 'ozeria', cat: 'aqua', sub: 'islands', icon: 'kayak', photo: 'img/ozeria-piscine.jpg',
     title: ['L’île Ozeria', 'Ozeria Island', 'Isla Ozeria', 'Ilha Ozeria'],
     place: 'hurghada', hours: '09:00–15:30', tags: ['family'],
     desc: [
@@ -503,7 +530,7 @@ const OFFERS = [
 
   /* --- Bateaux privés --- */
   {
-    id: 'speedboat', cat: 'aqua', sub: 'boats', icon: 'speedboat', photo: 'img/speed-boat.jpg',
+    id: 'speedboat', cat: 'aqua', sub: 'boats', icon: 'speedboat', photo: 'img/speedboat-prive.jpg',
     title: ['Speed boat privé', 'Private speedboat', 'Lancha privada', 'Lancha privada'],
     place: 'hurghada', dur: { h: 4 }, tags: ['private'],
     desc: [
@@ -517,7 +544,7 @@ const OFFERS = [
     addons: ['islands10', 'islands20']
   },
   {
-    id: 'combo-dolphin-white', cat: 'aqua', sub: 'boats', icon: 'dolphin', photo: 'img/speed-boat.jpg',
+    id: 'combo-dolphin-white', cat: 'aqua', sub: 'boats', icon: 'dolphin', photo: 'img/speedboat-prive.jpg',
     title: ['Maison des dauphins + White Island en speed boat', 'Dolphin House + White Island by speedboat', 'Casa de los Delfines + White Island en lancha', 'Casa dos Golfinhos + White Island de lancha'],
     place: 'hurghada', dur: { h: 4 }, tags: ['private'],
     desc: [
@@ -530,7 +557,7 @@ const OFFERS = [
     pricing: { type: 'group', min: 2, variants: [{ id: 'sb', p: 170, max: 6 }] }
   },
   {
-    id: 'boat-family-15', cat: 'aqua', sub: 'boats', icon: 'ship', photo: 'img/bateau-prive.jpg',
+    id: 'boat-family-15', cat: 'aqua', sub: 'boats', icon: 'ship', photo: 'img/bateau-yacht.jpg',
     title: ['Bateau privé en famille – 15 pers.', 'Private family boat – 15 people', 'Barco privado en familia – 15 pers.', 'Barco privado em família – 15 pessoas'],
     place: 'hurghada', tags: ['private', 'sunset'], season: 'summer',
     slots: ['08:00–15:00', ['10:00 → coucher du soleil', '10:00 → sunset', '10:00 → atardecer', '10:00 → pôr do sol']],
@@ -546,7 +573,7 @@ const OFFERS = [
   },
   {
     /* ⚠️ Masquée : même texte que l'offre à 700 € — à clarifier avec le client (voir A-VERIFIER.md) */
-    id: 'boat-family-15b', cat: 'aqua', sub: 'boats', icon: 'ship', photo: 'img/bateau-prive.jpg', hidden: true,
+    id: 'boat-family-15b', cat: 'aqua', sub: 'boats', icon: 'ship', photo: 'img/bateau-yacht.jpg', hidden: true,
     title: ['Bateau privé en famille – 15 pers. (formule 2)', 'Private family boat – 15 people (option 2)', 'Barco privado en familia – 15 pers. (opción 2)', 'Barco privado em família – 15 pessoas (opção 2)'],
     place: 'hurghada', tags: ['private', 'sunset'], season: 'summer',
     slots: ['08:00–15:00', ['10:00 → coucher du soleil', '10:00 → sunset', '10:00 → atardecer', '10:00 → pôr do sol']],
@@ -561,7 +588,7 @@ const OFFERS = [
     pricing: { type: 'group', min: 2, variants: [{ id: 'b15b', p: 800, sp: 1000, max: 15 }] }
   },
   {
-    id: 'boat-family-6', cat: 'aqua', sub: 'boats', icon: 'sailboat', photo: 'img/bateau-prive.jpg',
+    id: 'boat-family-6', cat: 'aqua', sub: 'boats', icon: 'sailboat', photo: 'img/bateau-yacht.jpg',
     title: ['Bateau privé en famille – 6 pers.', 'Private family boat – 6 people', 'Barco privado en familia – 6 pers.', 'Barco privado em família – 6 pessoas'],
     place: 'hurghada', tags: ['private', 'sunset'], season: 'summer',
     slots: ['08:00–15:00', ['10:00 → coucher du soleil', '10:00 → sunset', '10:00 → atardecer', '10:00 → pôr do sol']],
@@ -576,7 +603,8 @@ const OFFERS = [
     pricing: { type: 'group', min: 2, variants: [{ id: 'b6', p: 400, sp: 500, max: 6 }] }
   },
   {
-    id: 'boat-dolphin-house', cat: 'aqua', sub: 'boats', icon: 'dolphin', photo: 'img/maison-dauphins.jpg',
+    id: 'boat-dolphin-house', cat: 'aqua', sub: 'boats', icon: 'dolphin', photo: 'img/bateau-yacht.jpg',
+    photos: ['img/bateau-yacht.jpg', 'img/maison-dauphins.jpg'],
     title: ['Bateau privé – Maison des dauphins', 'Private boat – Dolphin House', 'Barco privado – Casa de los Delfines', 'Barco privado – Casa dos Golfinhos'],
     place: 'hurghada', hours: '08:00–14:00', tags: ['private'], season: 'summer',
     desc: [
@@ -713,7 +741,7 @@ const OFFERS = [
         id: 'van', l: ['VAN (minivan)', 'Minivan tour', 'En minivan', 'Em minivan'],
         days: [2, 4, 0], dep: '04:00', ret: '20:00',
         incl: ['entryFees', 'lunchLocal', 'minivan'],
-        pricing: { type: 'pp', tiers: [{ k: 'person', p: 75 }] }
+        pricing: { type: 'pp', tiers: [{ k: 'person', p: 80 }] }
       },
       {
         id: 'bus', l: ['BUS (autocar)', 'Coach tour', 'En autobús', 'Em autocarro'],
@@ -981,7 +1009,27 @@ const OFFERS = [
     ],
     notes: [['Tarif adulte de 23 à 28 € selon l’horaire.', 'Adult price €23–28 depending on the time slot.', 'Precio adulto de 23 a 28 € según el horario.', 'Preço adulto de 23 a 28 € consoante o horário.']],
     incl: ['hotelTransferHrg', 'quadBuggy', 'dinnerShow'], excl: ['turban', 'photographer', 'personal'],
-    pricing: { type: 'pp', tiers: [{ k: 'adult', a: '16+', p: 23 }, { k: 'child', a: '3-16', p: 15 }, { k: 'baby', a: '0-2', p: 0 }] }
+    pricing: { type: 'pp', tiers: [{ k: 'adult', a: '16+', p: 25 }, { k: 'child', a: '3-16', p: 12.5 }, { k: 'baby', a: '0-2', p: 0 }] }
+  },
+  {
+    id: 'camel-ride', supp: 'safari', cat: 'explore', sub: 'desert', icon: 'sunset', photo: 'img/chameau.jpg',
+    title: ['Balade à dos de chameau', 'Camel ride', 'Paseo en camello', 'Passeio de camelo'],
+    place: 'hurghada', tags: ['family', 'sunset'],
+    desc: [
+      'Partez à dos de chameau à travers le désert, au rythme tranquille de la caravane, pour une heure ou deux. Au coucher du soleil, les dunes se teintent d’or : un moment magique.',
+      'Ride a camel through the desert at the calm pace of the caravan, for one or two hours. At sunset the dunes turn golden: a magical moment.',
+      'Recorre el desierto a lomos de un camello, al ritmo tranquilo de la caravana, durante una o dos horas. Al atardecer las dunas se tiñen de oro: un momento mágico.',
+      'Atravesse o deserto de camelo, ao ritmo calmo da caravana, durante uma ou duas horas. Ao pôr do sol as dunas ficam douradas: um momento mágico.'
+    ],
+    notes: [['Tarif unique, quel que soit l’âge.', 'Single rate regardless of age.', 'Tarifa única sin distinción de edad.', 'Tarifa única, independentemente da idade.'],
+      ['Horaires à convenir avec l’agence lors du devis.', 'Times to be arranged with the agency when you send your quote.', 'Horario a convenir con la agencia al enviar el presupuesto.', 'Horário a combinar com a agência no pedido de orçamento.']],
+    incl: ['hotelTransfer', 'camelRide'], excl: ['personal', 'photographer'],
+    pricing: { type: 'pp', vk: 'vk_duration', variants: [
+      { id: '1h', l: ['1 heure', '1 hour', '1 hora', '1 hora'], tiers: [{ k: 'person', p: 35 }] },
+      { id: '1hs', l: ['1 heure · coucher du soleil', '1 hour · sunset', '1 hora · atardecer', '1 hora · pôr do sol'], tiers: [{ k: 'person', p: 40 }] },
+      { id: '2h', l: ['2 heures', '2 hours', '2 horas', '2 horas'], tiers: [{ k: 'person', p: 60 }] },
+      { id: '2hs', l: ['2 heures · coucher du soleil', '2 hours · sunset', '2 horas · atardecer', '2 horas · pôr do sol'], tiers: [{ k: 'person', p: 70 }] }
+    ] }
   },
   {
     id: 'fantastic-sahara', supp: 'safari', cat: 'explore', sub: 'desert', icon: 'telescope', photo: 'img/fantastic-sahara.jpg',
