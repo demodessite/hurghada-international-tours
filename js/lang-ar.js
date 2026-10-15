@@ -19,7 +19,7 @@ window.LANG_PACKS = window.LANG_PACKS || {};
   window.LANG_PACKS.ar = {
     name: 'العربية', locale: 'ar-EG-u-nu-latn', dir: 'rtl',
     ui: {
-      nav_home: 'الرئيسية', nav_activities: 'الأنشطة', nav_transfers: 'التوصيل', nav_about: 'من نحن', nav_reviews: 'الآراء', nav_contact: 'تواصل معنا', nav_catalogue: 'الكتالوج', catl_title: 'كتالوجاتنا', catl_sub: 'جميع عروضنا في لمحة واحدة، للتصفح أو التحميل.', catl_note: 'الأسعار استرشادية: الأسعار المحدّثة موجودة في صفحة كل نشاط.', catl_view: 'عرض', catl_dl: 'تحميل', catl_lang: 'النسخة الفرنسية',
+      nav_home: 'الرئيسية', nav_activities: 'الأنشطة', nav_transfers: 'التوصيل', nav_about: 'من نحن', nav_reviews: 'الآراء', nav_contact: 'تواصل معنا', nav_catalogue: 'الكتالوج', catl_title: 'كتالوجاتنا', catl_sub: 'جميع عروضنا في لمحة واحدة، للتصفح أو التحميل.', catl_note: 'الأسعار محدّثة بتاريخ {d}.', catl_sea: 'الدلافين والبحر والترفيه', catl_view: 'عرض', catl_dl: 'تحميل', catl_lang: 'النسخة الفرنسية',
       menu: 'القائمة', close: 'إغلاق', lang_label: 'اللغة', cart: 'طلبي',
       hero_eyebrow: 'وكالة محلية في الغردقة · البحر الأحمر',
       hero_title: 'رحلاتك في مصر، بلغتك.',

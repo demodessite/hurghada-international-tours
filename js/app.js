@@ -490,29 +490,35 @@
   }
 
   /* ---------- Catalogues (brochures PDF/JPG de l'agence) ---------- */
+  const BROCHURE_DATE = '2026-10-15';
   const BROCHURES = [
-    { cat: 'aqua', img: 'img/catalogue-aquatique.jpg', file: 'catalogue-activites-aquatiques.jpg' },
-    { cat: 'excursions', img: 'img/catalogue-excursions.jpg', file: 'catalogue-excursions.jpg' },
-    { cat: 'explore', img: 'img/catalogue-exploration.jpg', file: 'catalogue-exploration-bien-etre.jpg' }
+    { key: 'iles', over: 'aqua', title: () => L(catOf('aqua').subs.find((x) => x.id === 'islands').l), img: { fr: 'img/cat-fr-iles.jpg', en: 'img/cat-en-iles.jpg', es: 'img/cat-es-iles.jpg', pt: 'img/cat-pt-iles.jpg', ru: 'img/cat-ru-iles.jpg', ar: 'img/cat-ar-iles.jpg' } },
+    { key: 'mer', over: 'aqua', title: () => t('catl_sea'), img: { fr: 'img/cat-fr-mer.jpg', en: 'img/cat-en-mer.jpg', es: 'img/cat-es-mer.jpg', pt: 'img/cat-pt-mer.jpg', ru: 'img/cat-ru-mer.jpg', ar: 'img/cat-ar-mer.jpg' } },
+    { key: 'excursions', title: () => L(catOf('excursions').l), img: { fr: 'img/cat-fr-excursions.jpg', en: 'img/cat-en-excursions.jpg', es: 'img/cat-es-excursions.jpg', pt: 'img/cat-pt-excursions.jpg', ru: 'img/cat-ru-excursions.jpg', ar: 'img/cat-ar-excursions.jpg' } },
+    { key: 'explore', title: () => L(catOf('explore').l), img: { fr: 'img/cat-fr-explore.jpg', en: 'img/cat-en-explore.jpg', es: 'img/cat-es-explore.jpg', pt: 'img/cat-pt-explore.jpg', ru: 'img/cat-ru-explore.jpg', ar: 'img/cat-ar-explore.jpg' } }
   ];
+  const brImg = (b) => b.img[lang] || b.img.en;
+  const brFile = (b) => `hurghada-international-tours-${b.key}-${lang}.jpg`;
+  const brNote = () => t('catl_note', { d: new Intl.DateTimeFormat(loc(), { day: '2-digit', month: '2-digit', year: 'numeric' }).format(new Date(BROCHURE_DATE + 'T12:00:00')) });
   function renderBrochures() {
     $('#brochures').innerHTML = BROCHURES.map((b, i) => {
-      const name = L(catOf(b.cat).l);
+      const name = b.title();
       return `<article class="brochure">
-        <button class="brochure-thumb" type="button" data-brochure="${i}" aria-label="${esc(t('catl_view'))} – ${esc(name)}"><img src="${b.img}" alt="" loading="lazy" decoding="async"></button>
-        <div class="brochure-body"><h3>${esc(name)}</h3><p>${esc(t('catl_lang'))}</p>
+        <button class="brochure-thumb" type="button" data-brochure="${i}" aria-label="${esc(t('catl_view'))} – ${esc(name)}"><img src="${brImg(b)}" alt="" loading="lazy" decoding="async"></button>
+        <div class="brochure-body">${b.over ? `<p>${esc(L(catOf(b.over).l))}</p>` : ''}<h3>${esc(name)}</h3>
           <div class="brochure-actions"><button class="btn btn-ink btn-sm" type="button" data-brochure="${i}">${icon('search')}${esc(t('catl_view'))}</button>
-          <a class="btn btn-ghost btn-sm" href="${b.img}" download="${b.file}">${icon('download')}${esc(t('catl_dl'))}</a></div></div>
+          <a class="btn btn-ghost btn-sm" href="${brImg(b)}" download="${brFile(b)}">${icon('download')}${esc(t('catl_dl'))}</a></div></div>
       </article>`;
     }).join('');
+    const n = $('#catalogue .brochure-note span:last-child'); if (n) n.textContent = brNote();
   }
   const brochureDlg = document.getElementById('brochureDialog');
   function openBrochure(i) {
-    const b = BROCHURES[i]; const name = L(catOf(b.cat).l);
+    const b = BROCHURES[i]; const name = b.title();
     brochureDlg.innerHTML = `<div class="sheet-bar"><button class="back-btn" type="button" data-close>${icon('arrow-left')}${esc(t('back'))}</button><span class="sheet-bar-title" id="brochureTitle">${esc(name)}</span></div>
       <button class="sheet-close" type="button" data-close aria-label="${esc(t('close'))}">${icon('x')}</button>
-      <div class="sheet-scroll"><img class="brochure-full" src="${b.img}" alt="${esc(name)}"></div>
-      <div class="sheet-foot"><p class="brochure-note">${icon('info-circle')}<span>${esc(t('catl_note'))}</span></p><a class="btn btn-sun" href="${b.img}" download="${b.file}">${icon('download')}${esc(t('catl_dl'))}</a></div>`;
+      <div class="sheet-scroll"><img class="brochure-full" src="${brImg(b)}" alt="${esc(name)}"></div>
+      <div class="sheet-foot"><p class="brochure-note">${icon('info-circle')}<span>${esc(brNote())}</span></p><a class="btn btn-sun" href="${brImg(b)}" download="${brFile(b)}">${icon('download')}${esc(t('catl_dl'))}</a></div>`;
     if (!brochureDlg.open) { brochureDlg.showModal(); pushHist(brochureDlg, 'brochure', '#catalogue'); }
   }
   document.addEventListener('click', (e) => { const b = e.target.closest('#brochures [data-brochure]'); if (b) openBrochure(Number(b.dataset.brochure)); });

@@ -20,7 +20,7 @@ window.LANG_PACKS = window.LANG_PACKS || {};
   window.LANG_PACKS.ru = {
     name: 'Русский', locale: 'ru-RU', dir: 'ltr',
     ui: {
-      nav_home: 'Главная', nav_activities: 'Активности', nav_transfers: 'Трансферы', nav_about: 'О нас', nav_reviews: 'Отзывы', nav_contact: 'Контакты', nav_catalogue: 'Каталог', catl_title: 'Наши каталоги', catl_sub: 'Все наши предложения в одном месте — смотрите онлайн или скачивайте.', catl_note: 'Цены ориентировочные: актуальные тарифы — на странице каждой активности.', catl_view: 'Смотреть', catl_dl: 'Скачать', catl_lang: 'Французская версия',
+      nav_home: 'Главная', nav_activities: 'Активности', nav_transfers: 'Трансферы', nav_about: 'О нас', nav_reviews: 'Отзывы', nav_contact: 'Контакты', nav_catalogue: 'Каталог', catl_title: 'Наши каталоги', catl_sub: 'Все наши предложения в одном месте — смотрите онлайн или скачивайте.', catl_note: 'Цены актуальны на {d}.', catl_sea: 'Дельфины, море и развлечения', catl_view: 'Смотреть', catl_dl: 'Скачать', catl_lang: 'Французская версия',
       menu: 'Меню', close: 'Закрыть', lang_label: 'Язык', cart: 'Моя заявка',
       hero_eyebrow: 'Местное агентство в Хургаде · Красное море',
       hero_title: 'Ваши экскурсии в Египте, на вашем языке.',
